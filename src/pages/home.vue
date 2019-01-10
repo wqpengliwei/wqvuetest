@@ -6,7 +6,11 @@
 			<img src="../assets/2.png" :class="{none:(pItemFlag!=='1')}">
 			<img src="../assets/3.png" :class="{none:(pItemFlag!=='2')}">
 		</div>
-		<p>列表展示</p>
+
+		<router-link :to="{path:'/componentVue',query:{homeToComponentVue:'Weui'}}">
+				<p>列表展示</p>
+		</router-link>
+		
 		<div>
 			<router-link :to="{path:'/detail',query:{itemMsg:listItem}}" class="aForli" v-for="listItem in listItems">
 				· {{listItem.title}}  ￥{{listItem.price}} 
@@ -104,5 +108,8 @@
 	}
 	.aForli:nth-child(odd){
 		background-color: #dedede;
+	}
+	p{
+		line-height: 2rem;
 	}
 </style>
